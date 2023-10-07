@@ -25,7 +25,7 @@ class Utils:
         raw_df = raw_df[raw_df.Score >= 0]
         raw_df[data_column] = raw_df[data_column].astype(str)
         raw_df.to_csv("../data/raw/raw_with_score_gt_zero.csv", index=False)
-        return raw_df["Body"]
+        return raw_df
     
     def remove_code_segments(self, df):
         # Removing Code segments
