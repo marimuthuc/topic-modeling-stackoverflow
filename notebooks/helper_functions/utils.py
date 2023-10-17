@@ -16,7 +16,7 @@ class Utils:
         nltk.download('wordnet')
         self.stop_words = set(stopwords.words("english"))
         self.punct = '!"#$%&\'()*+,./:;<=>?@[\\]^`{|}~0123456789'
-        self.tags_features = pd.read_csv("../data/raw/freq_words.csv", usecols = ['Tag'])
+        self.tags_features = pd.read_csv("../data/cleaned/freq_words.csv", usecols = ['Tag'])
 
     def dataset_importer(self, file_name, data_column):
         "Imports the mentioned csv file and converts the data column to desired data type"
