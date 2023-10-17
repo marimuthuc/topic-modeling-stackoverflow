@@ -1,23 +1,16 @@
 # Topic modeling of Stack Overflow Posts
-In this projects, the keywords like `GPT and ChatGPT` were searched on StackOverflow and the returned results have been considered for further analysis. 
+In this project, the StackOverflow posts related to `NLP` topics have been considered for topic modeling. 
 ## Data Source
 The following SQL Queries were Executed on `Stack Exchhange Data Explorer`:
-### Query 1
+### Query
 ~~~~sql
 SELECT posts.Id AS [Post Link], posts.PostTypeId, posts.OwnerUserId, posts.AcceptedAnswerId AS [Answer Link], posts.Title, posts.Body, posts.CreationDate, posts.ClosedDate, posts.LastEditDate, posts.LastActivityDate, posts.Tags, posts.AnswerCount, posts.CommentCount, posts.Score, posts.ViewCount, posts.FavoriteCount, acc.PostTypeId, acc.OwnerUserId, acc.Body, acc.CreationDate, acc.CommentCount, acc.Score
 FROM Posts
 AS posts left outer join Posts acc on posts.AcceptedAnswerId = acc.Id
-WHERE posts.Tags LIKE '%chatgpt%' OR posts.Tags LIKE '%chatgpt-api%'
+WHERE posts.Tags LIKE '%nlp%' OR posts.Tags LIKE '%nltk%' OR posts.Tags LIKE '%spacy%' OR posts.Tags LIKE '%stanford-nlp%' OR posts.Tags LIKE '%huggingface-transformers%' OR posts.Tags LIKE '%gensim%' OR posts.Tags LIKE '%word2vec%' OR posts.Tags LIKE '%sentiment-analysis%' OR posts.Tags LIKE '%bert-language-model%' OR posts.Tags LIKE '%named-entity-recognition%' OR posts.Tags LIKE '%tf-idf%' OR posts.Tags LIKE '%word-embedding%' OR posts.Tags LIKE '%topic-modeling%' OR posts.Tags LIKE '%opennlp%' OR posts.Tags LIKE '%spacy-3%' OR posts.Tags LIKE '%nlp-question-answering%'
 ~~~~
-This query returned `259` StackOVerflow Posts.
-### Query 2
-~~~~sql
-SELECT posts.Id AS [Post Link], posts.PostTypeId, posts.OwnerUserId, posts.AcceptedAnswerId AS [Answer Link], posts.Title, posts.Body, posts.CreationDate, posts.ClosedDate, posts.LastEditDate, posts.LastActivityDate, posts.Tags, posts.AnswerCount, posts.CommentCount, posts.Score, posts.ViewCount, posts.FavoriteCount, acc.PostTypeId, acc.OwnerUserId, acc.Body, acc.CreationDate, acc.CommentCount, acc.Score
-FROM Posts
-AS posts left outer join Posts acc on posts.AcceptedAnswerId = acc.Id
-WHERE posts.Tags LIKE '%gpt-2%' OR posts.Tags LIKE '%gpt-3%' OR posts.Tags LIKE '%gpt-4%'
-~~~~
-This query returned `460` StackOverflow Posts.
+This query returned `47550` StackOVerflow Posts.
+
 ### Dataset Description
 | Column | Description |
 | ----------- | --------------|

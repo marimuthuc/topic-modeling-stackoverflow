@@ -1,0 +1,10 @@
+SELECT posts.Id AS [Post Link], posts.PostTypeId, posts.OwnerUserId, posts.AcceptedAnswerId AS [Answer Link], posts.Title, posts.Body, posts.CreationDate, posts.ClosedDate, posts.LastEditDate, posts.LastActivityDate, posts.Tags, posts.AnswerCount, posts.CommentCount, posts.Score, posts.ViewCount, posts.FavoriteCount, acc.PostTypeId, acc.OwnerUserId, acc.Body, acc.CreationDate, acc.CommentCount, acc.Score
+FROM Posts
+AS posts left outer join Posts acc on posts.AcceptedAnswerId = acc.Id
+WHERE posts.Tags LIKE '%nlp%' OR posts.Tags LIKE '%nltk%' OR posts.Tags LIKE '%spacy%' OR posts.Tags LIKE '%stanford-nlp%' OR posts.Tags LIKE '%huggingface-transformers%' OR posts.Tags LIKE '%gensim%' OR posts.Tags LIKE '%word2vec%' OR posts.Tags LIKE '%sentiment-analysis%' OR posts.Tags LIKE '%bert-language-model%' OR posts.Tags LIKE '%named-entity-recognition%' OR posts.Tags LIKE '%tf-idf%' OR posts.Tags LIKE '%word-embedding%' OR posts.Tags LIKE '%topic-modeling%' OR posts.Tags LIKE '%opennlp%' OR posts.Tags LIKE '%spacy-3%' OR posts.Tags LIKE '%nlp-question-answering%'
+
+
+nlp_nltk_spacy_stanford-nlp
+huggingface-transformers_gensim_word2vec_sentiment-analysis
+bert-language-model_named-entity-recognition_tf-idf_word-embedding
+topic-modeling_opennlp_spacy-3_nlp-question-answering
