@@ -21,10 +21,8 @@ class Utils:
     def dataset_importer(self, file_name, data_column):
         "Imports the mentioned csv file and converts the data column to desired data type"
         raw_df = pd.read_csv(file_name, low_memory=False)
-        raw_df = raw_df.drop_duplicates(subset='Id', keep='first')
-        raw_df = raw_df[raw_df.Score >= 0]
+        raw_df = raw_df.drop_duplicates(subset='Post Link', keep='first')
         raw_df[data_column] = raw_df[data_column].astype(str)
-        raw_df.to_csv("../data/raw/raw_with_score_gt_zero.csv", index=False)
         return raw_df
     
     def remove_code_segments(self, df):
